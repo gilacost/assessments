@@ -1,0 +1,194 @@
+parent, child
+Personal Data , Internal
+Internal , Authenticating
+Authenticating , PINCode
+Authenticating , Password
+Authenticating , Secret Text
+Internal , Preference
+Preference , Interest
+Interest , Dislike
+Interest , Like
+Preference , Favorite
+Favorite , Favorite Color
+Favorite , Favorite Food
+Favorite , Favorite Music
+Preference , Intention
+Preference , Opinion
+Preference , Privacy Preference
+Internal , Knowledge Belief
+Knowledge Belief , Philosophical Belief
+Knowledge Belief , Religious Belief
+Knowledge Belief , Thought
+Personal Data , External
+External , Physical Characteristic
+Physical Characteristic , Age
+Physical Characteristic , Gender
+Physical Characteristic , Hair Color
+Physical Characteristic , Height
+Physical Characteristic , Piercing
+Physical Characteristic , Skin Tone
+Physical Characteristic , Tattoo
+Physical Characteristic , Weight
+External , Behavioral
+Behavioral , Attitude
+Behavioral , Browsing Behavior
+Behavioral , Call Log
+Behavioral , Demeanor
+Behavioral , Link Clicked
+Behavioral , Personality
+External , Identifying
+Identifying , Biometric
+Biometric , Fingerprint
+Biometric , Retina
+Identifying , Name
+Identifying , Official
+Identifying , Picture
+Identifying , UID
+Identifying , Username
+External , Medical Health
+Medical Health , Blood Type
+Medical Health , Code
+Medical Health , Disability
+Medical Health , Drug Test Result
+Medical Health , Health History
+Health History , Family Health History
+Health History , Individual Health History
+Medical Health , Health
+Health , Mental Health
+Health , Physical Health
+Medical Health , Health Record
+Medical Health , Prescription
+External , Demographic
+Demographic , Geographic
+Demographic , Income Bracket
+Demographic , Physical Trait
+External , Ethnicity
+Ethnicity , Language
+Language , Accent
+Language , Dialect
+Ethnicity , Ethnic Origin
+Ethnicity , Race
+External , Sexual
+Sexual , Fetish
+Sexual , Proclivitie
+Sexual , Sexual History
+Sexual , Sexual Preference
+Personal Data , Special Category Personal Data
+Special Category Personal Data , Biometric
+Biometric , Fingerprint
+Biometric , Retina
+Special Category Personal Data , Medical Health
+Medical Health , Blood Type
+Medical Health , Code
+Medical Health , Disability
+Medical Health , Drug Test Result
+Medical Health , Health History
+Health History , Family Health History
+Health History , Individual Health History
+Medical Health , Health
+Health , Mental Health
+Health , Physical Health
+Medical Health , Health Record
+Medical Health , Prescription
+Special Category Personal Data , Ethnic Origin
+Special Category Personal Data , Sexual
+Sexual , Fetish
+Sexual , Proclivitie
+Sexual , Sexual History
+Sexual , Sexual Preference
+Special Category Personal Data , Philosophical Belief
+Special Category Personal Data , Political Affiliation
+Special Category Personal Data , Race
+Special Category Personal Data , Religion
+Special Category Personal Data , Religious Belief
+Personal Data , Social
+Social , Social Network
+Social Network , Acquantaince
+Social Network , Association
+Social Network , Connection
+Social Network , Friend
+Social Network , Group Membership
+Social , Professional
+Professional , Certification
+Professional , Disciplinary Action
+Professional , Employment History
+Professional , Job
+Professional , Professional Evaluation
+Professional , Professional Interview
+Professional , Reference
+Professional , Salary
+Professional , School
+Professional , Work History
+Social , Public Life
+Public Life , Character
+Public Life , Communications Metadata
+Public Life , General Reputation
+Public Life , Interaction
+Public Life , Marital Status
+Public Life , Political Affiliation
+Public Life , Religion
+Public Life , Social Status
+Social , Communication
+Communication , Email Content
+Communication , Social Media Communication
+Communication , Voice Communication Recording
+Communication , Voice Mail
+Social , Criminal
+Criminal , Criminal Charge
+Criminal , Criminal Conviction
+Criminal , Criminal Pardon
+Social , Family
+Family , Family Structure
+Family Structure , Divorce
+Family Structure , Marriage
+Family Structure , Offspring
+Family Structure , Parent
+Family Structure , Sibling
+Family , Relationship
+Personal Data , Tracking
+Tracking , Device Based
+Device Based , Browser Fingerprint
+Device Based , Address
+Device Based , Address
+Tracking , Contact
+Contact , Email Address
+Contact , Physical Address
+Contact , Telephone Number
+Tracking , Location
+Location , Country
+Location , Coordinate
+Location , Room Number
+Personal Data , Financial
+Financial , Financial Account
+Financial Account , Account Identifier
+Account Identifier , Credit Card Number
+Account Identifier , Financial Account Number
+Financial Account , Bank Account
+Financial , Ownership
+Ownership , House Owned
+House Owned , Apartment Owned
+Ownership , Car Owned
+Ownership , Personal Possession
+Financial , Credit
+Credit , Credit Capacity
+Credit , Credit Record
+Credit , Credit Worthiness
+Credit Worthiness , Credit Score
+Credit , Credit Standing
+Financial , Transactional
+Transactional , Credit
+Credit , Credit Capacity
+Credit , Credit Record
+Credit , Credit Worthiness
+Credit Worthiness , Credit Score
+Credit , Credit Standing
+Transactional , Income
+Transactional , Loan Record
+Transactional , Purchase
+Transactional , Purchases And Spending Habit
+Transactional , Sale
+Transactional , Tax
+Transactional , Transaction
+Personal Data , Derived Personal Data
+Personal Data , Historical
+Historical , Life History

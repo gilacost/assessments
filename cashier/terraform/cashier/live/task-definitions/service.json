@@ -1,0 +1,27 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "ecs-docs",
+      "image": "901533923326.dkr.ecr.eu-west-3.amazonaws.com/ecs-docs:latest",
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "hostPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "environment": [],
+      "mountPoints": [],
+      "volumesFrom": []
+    }
+  ],
+  "family": "ecs-docs",
+  "executionRoleArn": "arn:aws:iam::901533923326:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "volumes": [],
+  "placementConstraints": [],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512"
+}

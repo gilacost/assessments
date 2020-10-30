@@ -1,0 +1,14 @@
+[
+  {
+    "name": "ecs-docs",
+    "image": "${ecr_img}",
+    "portMappings": [
+      {
+        "containerPort": 80,
+        "hostPort": 80,
+        "protocol": "tcp"
+      }
+    ],
+    "essential": true
+  }
+]

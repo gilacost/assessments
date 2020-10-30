@@ -1,0 +1,31 @@
+version: 2
+jobs:
+  build:
+    environment:
+      ELIXIR_VSN: 1.10.2
+      OTP_VSN: 22.3
+    machine: true
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - plts-v$ELIXIR_VSN-otp-$OTP_VSN
+
+      # run a postgres with ports opened, this voids network creation
+      - run: docker run -e POSTGRES_PASSWORD=postgres --name db -d --rm circleci/postgres:9.4
+      # build only the builder stage for testing
+      - run: docker build -t duffel-builder:$CIRCLE_BRANCH --target builder .
+      # test with builder target
+      - run: docker run --network container:db -e MIX_ENV=test duffel-builder:$CIRCLE_BRANCH mix test
+      # run dialyzer with builder target
+      - run: docker run -v $(pwd)/priv/plts:/tmp/priv/plts -e MIX_ENV=dev duffel-builder:$CIRCLE_BRANCH mix dialyzer
+      # build release caching from builder
+      - run: docker build -t duffel:$CIRCLE_BRANCH --target runtime --cache-from=duffel-builder:$CIRCLE_BRANCH .
+      # show the release version
+      - run: docker run duffel:$CIRCLE_BRANCH
+
+      - save_cache:
+          paths:
+            - priv/plts
+          key: plts-v$ELIXIR_VSN-otp-$OTP_VSN

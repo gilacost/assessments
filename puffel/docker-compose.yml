@@ -1,0 +1,55 @@
+version: "3.1"
+
+services:
+  db:
+    image: postgres
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 10s
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+    networks:
+      - backend
+
+  api:
+    image: 127.0.0.1:5000/puffel
+    build: .
+    command: start
+    ports:
+      - 80:4001
+    networks:
+      - backend
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+    networks:
+      - backend
+
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+    ports:
+      - 3000:3000
+    networks:
+      - backend
+volumes:
+  grafana_data:
+  prometheus_data:
+
+networks:
+  backend:

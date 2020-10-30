@@ -1,0 +1,30 @@
+PENDING PARA ACABAR
+- refactor build with accounts
+- integration test for links
+
+ACCOUNTS
+- get starting running balance
+- generate tx_amount_per_day from the begining
+- get last ninty day sum until current day
+
+TRANSACTIONS
+- generate tx per amount in acount
+
+- review that are ninety_days
+
+
+get min max
+
+enum 0..num_txt
+
+:rand.uniform(max/5)
+
+if index es == num_txt -1
+
+  tx_val = max -acc
+
+
+  sort flacky test
+  review doc tests and undo the ones that does not work
+  write docs
+  push PR

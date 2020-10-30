@@ -1,0 +1,29 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.4.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+
+-   repo: local
+    hooks:
+    -   id: mix-test
+        name: 'elixir: mix dialyzer'
+        entry: mix dialyzer
+        language: system
+        files: \.ex$
+
+    -   id: mix-test
+        name: 'elixir: mix tests'
+        entry: mix test
+        language: system
+        files: \.exs$
+
+    -   id: mix-test
+        name: 'elixir: check formatted'
+        entry: mix format --check-formatted
+        language: system
+        files: \.(ex|exs)$
