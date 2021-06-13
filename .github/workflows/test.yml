@@ -6,7 +6,11 @@ env:
   OTP_VERSION: 23.0.3
   DATABASE_HOST: postgres
 
-on: push
+on:
+  push
+  # push:
+  # paths:
+  #   - "./patick/**"
 jobs:
   test:
     name: Test, format and static analysis
@@ -44,27 +48,27 @@ jobs:
         uses: actions/cache@v1
         id: cache-deps
         with:
-          path: deps
-          key: deps-${{ env.MIX_ENV }}-v${{ env.ELIXIR_VERSION }}-otp-${{ env.OTP_VERSION }}-${{ hashFiles(format('{0}{1}', github.workspace, '/mix.lock')) }}
+          path: patick/deps
+          key: patick/deps-${{ env.MIX_ENV }}-v${{ env.ELIXIR_VERSION }}-otp-${{ env.OTP_VERSION }}-${{ hashFiles(format('{0}{1}', github.workspace, '/patick/mix.lock')) }}
           restore-keys: |
-            deps-${{ env.MIX_ENV }}-v${{ env.ELIXIR_VERSION }}-otp-${{ env.OTP_VERSION }}-
+            patick/deps-${{ env.MIX_ENV }}-v${{ env.ELIXIR_VERSION }}-otp-${{ env.OTP_VERSION }}-
 
       - name: Cache Dialyzer PLTs
         uses: actions/cache@v1
         with:
-          path: priv/plts
+          path: patick/priv/plts
           key: plts-v${{ env.ELIXIR_VERSION }}-otp-${{ env.OTP_VERSION }}-${{ github.sha }}
           restore-keys: |
             plts-v${{ env.ELIXIR_VERSION }}-otp-${{ env.OTP_VERSION }}-
 
       - name: Get Dependencies
-        run: mix deps.get
+        run: cd patick && mix deps.get
 
       - name: Check Source Code Formatting
-        run: mix format --check-formatted
+        run: cd patick && mix format --check-formatted
 
       - name: Run Tests
-        run: mix test --trace
+        run: cd patick && mix test --trace
 
       - name: Run Dialyzer
-        run: MIX_ENV=dev mix dialyzer
+        run: cd patick && MIX_ENV=dev mix dialyzer
