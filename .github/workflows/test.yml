@@ -1,9 +1,9 @@
 name: Elixir CI
 
 env:
-  ELIXIR_VERSION: 1.10.4
+  ELIXIR_VERSION: 1.12.1
   MIX_ENV: test
-  OTP_VERSION: 23.0.3
+  OTP_VERSION: 24.0-rc3
   DATABASE_HOST: postgres
 
 on:
